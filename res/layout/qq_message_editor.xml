@@ -177,4 +177,15 @@
         </LinearLayout>
     </FrameLayout>
 
+   
+    <!--
+    <com.google.android.gms.ads.AdView
+        android:id="@+id/adView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        bootstrapbutton:adSize="BANNER"
+        bootstrapbutton:adUnitId="@string/adId"
+        android:layout_gravity="center_horizontal" />
+    -->
+
 </LinearLayout>
