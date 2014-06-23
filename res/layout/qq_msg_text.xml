@@ -1,0 +1,11 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content" >
+
+    <include layout="@layout/qq_msg_text_left" />
+
+    <include layout="@layout/qq_msg_text_right" />
+
+    <include layout="@layout/qq_msg_time" />
+
+</FrameLayout>

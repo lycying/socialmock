@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:bootstrapbutton="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/basic_setting"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:background="#fff"
+    android:orientation="vertical"
+    android:visibility="gone" >
+
+    <TableLayout
+        android:id="@+id/login_user_table"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="15.0dip"
+        android:layout_marginRight="15.0dip"
+        android:layout_marginTop="10.0dip"
+        android:orientation="vertical" >
+
+        <TableRow>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="昵称:"
+                android:textColor="#ff000000"
+                android:textStyle="bold" />
+
+            <com.beardedhen.androidbootstrap.BootstrapEditText
+                android:id="@+id/nick_name_txt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                bootstrapbutton:be_roundedCorners="false"
+                bootstrapbutton:be_state="primary" />
+        </TableRow>
+
+        <TableRow>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="设备:"
+                android:textColor="#ff000000"
+                android:textStyle="bold" />
+
+            <Spinner
+                android:id="@+id/spinner1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:entries="@array/device_qq" />
+        </TableRow>
+
+        <TableRow>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="左边qq号:"
+                android:textColor="#ff000000"
+                android:textStyle="bold" />
+
+            <com.beardedhen.androidbootstrap.BootstrapEditText
+                android:id="@+id/head_image_left"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:inputType="number"
+                bootstrapbutton:be_roundedCorners="false"
+                bootstrapbutton:be_state="primary" />
+        </TableRow>
+
+        <TableRow android:layout_marginTop="5dp" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="右方qq号:"
+                android:textColor="#ff000000"
+                android:textStyle="bold" />
+
+            <com.beardedhen.androidbootstrap.BootstrapEditText
+                android:id="@+id/head_image_right"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:inputType="number"
+                bootstrapbutton:be_roundedCorners="false"
+                bootstrapbutton:be_state="primary" />
+        </TableRow>
+    </TableLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:gravity="center"
+        android:orientation="horizontal" >
+
+        <com.beardedhen.androidbootstrap.BootstrapButton
+            android:id="@+id/basic_setting_btn_cancel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginRight="20dp"
+            android:text="取消"
+            bootstrapbutton:bb_size="small"
+            bootstrapbutton:bb_text_gravity="center"
+            bootstrapbutton:bb_type="default" />
+
+        <com.beardedhen.androidbootstrap.BootstrapButton
+            android:id="@+id/basic_setting_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="设置完毕"
+            bootstrapbutton:bb_size="small"
+            bootstrapbutton:bb_text_gravity="center"
+            bootstrapbutton:bb_type="primary" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="8dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/shadow_bottom" />
+
+</LinearLayout>

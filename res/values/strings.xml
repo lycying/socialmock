@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">意淫大师</string>
+    <string-array name="menu_for_qq_item">
+		<item>编辑</item>
+		<item>删除</item>
+		<item>复制到剪贴板</item>
+	</string-array>
+	<string-array name="menu_for_qq_chat">
+		<item>编辑</item>
+		<item>删除</item>
+	</string-array>
+</resources>
