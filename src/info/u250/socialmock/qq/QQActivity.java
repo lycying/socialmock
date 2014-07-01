@@ -3,6 +3,7 @@ package info.u250.socialmock.qq;
 import info.u250.socialmock.MyClipboardManager;
 import info.u250.socialmock.R;
 import info.u250.socialmock.ScreenShot;
+
 import java.io.File;
 import java.lang.reflect.Field;
 import java.util.ArrayList;
@@ -10,6 +11,7 @@ import java.util.Calendar;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.app.DatePickerDialog;
@@ -47,14 +49,18 @@ import android.widget.AdapterView.OnItemClickListener;
 import android.widget.CheckBox;
 import android.widget.DatePicker;
 import android.widget.GridView;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
 import android.widget.TextView;
 import android.widget.TimePicker;
 import android.widget.Toast;
+
 import com.activeandroid.query.Select;
 import com.beardedhen.androidbootstrap.BootstrapButton;
 import com.beardedhen.androidbootstrap.BootstrapEditText;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
 import com.nostra13.universalimageloader.core.ImageLoader;
 
 
@@ -64,7 +70,7 @@ public class QQActivity extends Activity {
 	QQMessageAdapter mAdapter;
 	TextView lblTitleName ;
 	View clickableBasicSetting ;
-	View clickableMessageEditor;
+	LinearLayout clickableMessageEditor;
 	View partHeader ;
 	View partBottom ;
 	BootstrapButton btnOkBasicSetting ;
@@ -112,7 +118,7 @@ public class QQActivity extends Activity {
 		clickableBasicSetting = findViewById(R.id.basic_setting);
 		partHeader = findViewById(R.id.input_header);
 		partBottom = findViewById(R.id.input_bottom);
-		clickableMessageEditor = findViewById(R.id.message_editor);
+		clickableMessageEditor = (LinearLayout)findViewById(R.id.message_editor);
 		btnOkBasicSetting = (BootstrapButton)findViewById(R.id.basic_setting_btn);
 		btnOkMessageEditor = (BootstrapButton)findViewById(R.id.message_edtor_btn);
 		btnOkMessageEditor2 = (BootstrapButton)findViewById(R.id.message_edtor_btn2);
@@ -294,7 +300,23 @@ public class QQActivity extends Activity {
 			}
 		});
 		setUpData();
+		adView = (AdView)this.findViewById(R.id.adView);
+	    AdRequest adRequest = new AdRequest.Builder().build();
+	    adView.loadAd(adRequest);
+	    
+		// 实例化LayoutParams(重要)
+//		LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(
+//						FrameLayout.LayoutParams.MATCH_PARENT,
+//						FrameLayout.LayoutParams.WRAP_CONTENT);
+//	    AdManager.getInstance(this).init("2467b1bebc3cbaf6","8af724ed3fa72629", false);
+//	    layoutParams.gravity = Gravity.BOTTOM | Gravity.RIGHT; // 这里示例为右下角
+//		// 实例化广告条
+//		AdView adView = new AdView(this,AdSize.FIT_SCREEN);
+		// 调用Activity的addContentView函数
+//		clickableMessageEditor.addView(adView, layoutParams);
 	}
+	AdView adView;
+	
 	private int imageIds[] = ExpressionUtil.getExpressRcIds();	//保存所有表情资源的id
 	private int to_edit_message_index = -1;
 	private void setUpData(){
@@ -343,6 +365,7 @@ public class QQActivity extends Activity {
 		txtNickName.setText(lblTitleName.getText());
 	}
     private void openMessageInputLayer(int index){
+//    	adView.setVisibility(View.VISIBLE);
     	if(clickableMessageEditor.getVisibility() == View.VISIBLE){
     		clickableBasicSetting.setVisibility(View.GONE);
 			clickableMessageEditor.setVisibility(View.GONE);
